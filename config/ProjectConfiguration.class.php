@@ -7,7 +7,10 @@ class ProjectConfiguration extends sfProjectConfiguration
 {
   public function setup()
   {
+
   	$this->setWebDir($this->getRootDir().'../public_html/busgurus');
+    $this->enableAllPluginsExcept(array('sfDoctrinePlugin'));
     $this->enablePlugins('sfPropelPlugin');
+    $this->enablePlugins('sfSimpleCMSPlugin');
   }
 }
