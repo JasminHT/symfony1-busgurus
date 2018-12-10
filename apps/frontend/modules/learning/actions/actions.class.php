@@ -18,7 +18,8 @@ class learningActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
 
-    $this->forward('default', 'module');
+    //$this->forward('default', 'module');
+    echo "the page is 'index'";
   }
 
   public function executeShow(sfWebRequest $request)
