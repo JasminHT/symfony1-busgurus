@@ -22,7 +22,12 @@ class learningActions extends sfActions
     echo "the page is 'index'";
   }
 
-  public function executeShow(sfWebRequest $request)
+ /**
+  * Executes show action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeShow()
   {
   	echo "the page is 'show'";
   }
