@@ -5,42 +5,21 @@
         <?php include_http_metas() ?>
         <?php include_metas() ?>
         <?php include_title() ?>
-        <?php include_partial('global/feed') ?>
-        <?php $is_frontpage = ($_SERVER['REQUEST_URI'] == '/busgurus/'); ?>
-        <link rel="shortcut icon" href="/busgurus/favicon.ico" />
         <!--[if lt IE 7]>
                 <script type="text/javascript" src="/busgurus/js/unitpngfix.js"></script>
         <![endif]-->
     </head>
-    <body class="<?php echo $sf_user->getCulture()?>">
-        <?php  include($_SERVER['DOCUMENT_ROOT']."/metasite/metaheader.php"); ?>
-        <div id="container" <?php if ($is_frontpage) echo "class='homepage'";  ?> >
-            
-            <!--
-            <?php if ($is_frontpage)  { ?>
-                <div id="banner">
-                    <?php include_partial('global/banner', array('culture' => "en")) ?>
-                </div>
-            <?php } ?>
-            -->
-            <!--
-            <div id="header" <?php if ($is_frontpage)  {?> style="border-radius:0;" <?php } ?> >
-                <?php include_partial('global/header', array('culture' => "en")) ?>
-                <?php if ($is_frontpage)  { ?>
-                    <div id='introduction'>
-                        Introduction
-                    </div>
-                <?php } ?>
-            </div>
-            -->
+    <body>
+        <div id="container" >
+
             <div id="content" class='clearfix'>
                 <?php echo $sf_content ?>
             </div>
         
             <div id="footer">
-                <?php include_partial('global/footer', array('culture' => "en")) ?>
+
             </div>
         </div>
-        <?php  include($_SERVER['DOCUMENT_ROOT']."/metasite/metafooter.php"); ?>
+
     </body>
 </html>
