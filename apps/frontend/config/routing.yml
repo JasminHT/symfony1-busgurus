@@ -5,7 +5,6 @@
 testpage:
 	url: /test
 	param: { module: test, action: show }
-	requirements: { slug: '.*'}
 
 # cms rules
 sf_cms_show:
