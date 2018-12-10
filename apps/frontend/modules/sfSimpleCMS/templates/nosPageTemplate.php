@@ -1,5 +1,8 @@
 <?php echo use_helper('sfSimpleCMS') ?>
 
+THIS IS SIMPLE CMS NOS
+
+<?php /*
 <div id="cms" class="nos">
   <div id='page-header'>
       <img src="/busgurus/images/tools-trans-nos.png">
@@ -30,3 +33,5 @@
         </div>
     </div>
 </div>
+
+/* ?>

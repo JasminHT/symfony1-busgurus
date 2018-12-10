@@ -9,17 +9,17 @@ testpage:
 # cms rules
 sf_cms_show:
   url: /page/:slug
-  param: { module: sfSimpleCMS, action: show,  sf_culture: en }
-  requirements: { slug: '.*'}
+  param: { module: sfSimpleCMS, action: show}
+  #requirements: { slug: '.*'}
 
 sf_cms_delete:
   url: /cms_delete/:slug
-  param: { module: sfSimpleCMS, action: delete, sf_culture: en }
+  param: { module: sfSimpleCMS, action: delete}
   requirements: { slug: '.*'}
 
 sf_cms_toggle_publish:
   url: /cms_publish/:slug
-  param: { module: sfSimpleCMS, action: togglePublish, sf_culture: en }
+  param: { module: sfSimpleCMS, action: togglePublish}
   requirements: { slug: '.*'}
 
 
