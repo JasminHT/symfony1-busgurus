@@ -17,6 +17,15 @@ class testActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+  }
+
+   /**
+  * Executes show action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeShow(sfWebRequest $request)
+  {
+  	echo "bla";
   }
 }
