@@ -2,6 +2,10 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 
+testpage:
+	url: /test
+	param: { module: test, action: show }
+	requirements: { slug: '.*'}
 
 # cms rules
 sf_cms_show:
