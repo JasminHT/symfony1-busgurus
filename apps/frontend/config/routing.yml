@@ -1,6 +1,26 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+
+
+# cms rules
+sf_cms_show:
+  url: /:sf_culture/page/:slug
+  param: { module: sfSimpleCMS, action: show,  sf_culture: en }
+  requirements: { slug: '.*'}
+
+sf_cms_delete:
+  url: /:sf_culture/cms_delete/:slug
+  param: { module: sfSimpleCMS, action: delete, sf_culture: en }
+  requirements: { slug: '.*'}
+
+sf_cms_toggle_publish:
+  url: /:sf_culture/cms_publish/:slug
+  param: { module: sfSimpleCMS, action: togglePublish, sf_culture: en }
+  requirements: { slug: '.*'}
+
+
+
 # default rules
 homepage:
   url:   /
@@ -14,3 +34,5 @@ default_index:
 
 default:
   url:   /:module/:action/*
+
+
