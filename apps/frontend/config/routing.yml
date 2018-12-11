@@ -6,23 +6,6 @@ testpage:
 	url: /test
 	param: { module: test, action: show }
 
-# cms rules
-sf_cms_show:
-  url: /page/:slug
-  param: { module: sfSimpleCMS, action: show}
-  #requirements: { slug: '.*'}
-
-sf_cms_delete:
-  url: /cms_delete/:slug
-  param: { module: sfSimpleCMS, action: delete}
-  requirements: { slug: '.*'}
-
-sf_cms_toggle_publish:
-  url: /cms_publish/:slug
-  param: { module: sfSimpleCMS, action: togglePublish}
-  requirements: { slug: '.*'}
-
-
 
 # default rules
 homepage:
