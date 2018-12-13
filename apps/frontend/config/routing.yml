@@ -1,6 +1,9 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+testroute:
+  url:   /testroute
+  param: { module: learning, action: index }
 
 # default rules
 homepage:
