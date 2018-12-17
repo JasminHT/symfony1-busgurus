@@ -3,7 +3,7 @@
 
 testroute:
   url:   /testroute
-  param: { module: learning, action: index }
+  param: { module: test, action: index }
 
 # default rules
 homepage:
