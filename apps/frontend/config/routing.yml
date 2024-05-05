@@ -5,18 +5,186 @@ testroute:
   url:   /testroute
   param: { module: test, action: index }
 
+# links rules
+
+links:
+  url: /:sf_culture/links/:resource
+  param: { module: links, action: index,  sf_culture: en }
+  requirements:
+    sf_culture: (fr|en)
+
+# Keyword rules
+hr_keywords:
+  class: sfPropelRouteCollection
+  options:
+    model:                HrKeywords
+    module:               adminKeywords
+    prefix_path:          /:sf_culture/adminKeywords
+    column:               id
+    with_wildcard_routes: true
+
+hr_resources:
+  class: sfPropelRouteCollection
+  options:
+    model:                HrResources
+    module:               hr_resources
+    prefix_path:          /:sf_culture/adminResources
+    column:               id
+    with_wildcard_routes: true
+    sf_culture:     en
+
+# cms rules
+sf_cms_show:
+  url: /:sf_culture/page/:slug
+  param: { module: sfSimpleCMS, action: show,  sf_culture: en }
+  requirements: { slug: '.*'}
+
+sf_cms_delete:
+  url: /:sf_culture/cms_delete/:slug
+  param: { module: sfSimpleCMS, action: delete, sf_culture: en }
+  requirements: { slug: '.*'}
+
+sf_cms_toggle_publish:
+  url: /:sf_culture/cms_publish/:slug
+  param: { module: sfSimpleCMS, action: togglePublish, sf_culture: en }
+  requirements: { slug: '.*'}
+
+# Search rules
+
+searchReindex:
+  url:   /:sf_culture/search/reindex/:p
+  param: { module: search, action: reindex, p: '1' }
+
+searchSite:
+  url:   /:sf_culture/search/site/*
+  param: { module: search, action: site,  sf_culture: 'en' }
+  requirements:
+    sf_culture: (fr|en)
+
+searchKeywords:
+  url:   /:sf_culture/search/keywords
+  param: { module: search, action: keywords, sf_culture: 'en' }
+  requirements:
+    sf_culture: (fr|en)
+    limit:      \d+               #Number required
+    timestamp:  \d+               #Number
+
+
+searchRecord:
+  url:   /:sf_culture/search/record/:page/:id/:query
+  param: { module: search, action: record, page: 1, sf_culture: en, query: '' }
+  requirements:
+    sf_culture: (fr|en)
+    id: \d+               #Number required
+    page: \d+               #Number required
+
+searchQuery:
+  url:   /:sf_culture/search/query
+  param: { module: search, action: query, sf_culture: en }
+  requirements:
+    sf_culture: (fr|en)
+    
+searchResults:
+  url:   /:sf_culture/search/results/:page/:query
+  param: { module: search, action: results, sf_culture: en, page: 1, query: '' }
+  requirements:
+    sf_culture: (fr|en)
+    page: \d+               #Number required
+
+search:
+  url:   /:sf_culture/search
+  param: { module: search, action: index, sf_culture: en }
+  requirements:
+    sf_culture: (fr|en)
+
+# admin Module Rules
+
+admin:
+  url:   /:sf_culture/admin
+  param: { module: admin, action: index, sf_culture: en }
+  requirements:
+    sf_culture: (en|fr)
+
+adminRedirect:
+  url:   /admin/
+  param: { module: admin, action: index , sf_culture: en}
+  
+adminRedirect2:
+  url:   /admin
+  param: { module: admin, action: index , sf_culture: en}  
+
+
+# tools rules
+tools:
+  url:   /:sf_culture/tools
+  param: { module: tools, action: index, sf_culture: en }
+  requirements:
+    sf_culture: (fr|en)
+
+
+# resource rules
+
+resourcesIntro:
+  url:   /:sf_culture/resources/intro/:cat
+  param: { module: flash, action: index, sf_culture: en, cat: 2, page: 1, displayOrder: latest}
+  requirements:
+    sf_culture: (fr|en)
+    displayOrder: (latest|popular)
+    cat: \d+               #Number required
+    page: \d+               #Number required
+
+
+resources:
+  url:   /:sf_culture/resources/:cat/:page/:displayOrder/
+  param: { module: resources, action: list, sf_culture: en, cat: 2, page: 1, displayOrder: latest}
+  requirements:
+    sf_culture: (fr|en)
+    displayOrder: (latest|popular)
+    cat: \d+               #Number required
+    page: \d+               #Number required
+
+resourceRead:
+  url:   /:sf_culture/resource/view/:cat/:page/:id/:displayOrder
+  param: { module: resources, action: read, sf_culture: en, cat: 1, page: 1, id: 1, displayOrder: latest }
+  requirements:
+    sf_culture: (fr|en)
+    displayOrder: (latest|popular)
+    cat: \d+               #Number required
+    id: \d+                #Number required
+    page: \d+                #Number required
+
+resourceShow:
+  url:   /:sf_culture/resource/show/:id
+  param: { module: resources, action: show, sf_culture: en, id: 1 }
+  requirements:
+    sf_culture: (fr|en)
+    id: \d+                #Number required
+
+resourceClick:
+  url:   /:sf_culture/resource/click/:id/
+  param: { module: resources, action: click, sf_culture: en, id: 0}
+  requirements:
+    sf_culture: (fr|en)
+    id: \d+               #Number required
+
+
+# default rules
+hrLibrary:
+  url:   /:sf_culture/resources/main
+  param: { module: home, action: library, sf_culture: en  }
+  requirements:
+    sf_culture: (fr|en)
+
 # default rules
 homepage:
-  url:   /
-  param: { module: default, action: index }
+  url:   /:sf_culture
+  param: { module: home, action: index, sf_culture: en  }
+  requirements:
+    sf_culture: (fr|en)
 
-# generic rules
-# please, remove them by adding more specific rules
 default_index:
-  url:   /:module
+  url:   /:sf_culture/:module
   param: { action: index }
 
 default:
-  url:   /:module/:action/*
-
-
+  url:   /:sf_culture/:module/:action/*

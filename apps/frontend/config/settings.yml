@@ -35,6 +35,7 @@ all:
     secure_action:          secure         # The credentials required for an action
 
   .settings:
+    i18n:                   off   
 # Form security secret (CSRF protection)
     csrf_secret:            UniqueSecret
 
@@ -43,7 +44,7 @@ all:
     escaping_method:        ESC_SPECIALCHARS
 
     #
-    enabled_modules:        [default, sfGuardAuth, sfGuardUser]
+    enabled_modules:        [default, sfGuardAuth, sfGuardUser, sfSimpleCMS, sfSimpleCMSAdmin]
 
     # Enable the database manager
     use_database:           true
