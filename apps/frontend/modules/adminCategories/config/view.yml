@@ -1,0 +1,4 @@
+default:
+  stylesheets:    [/sfPropelPlugin/css/global.css, /sfPropelPlugin/css/default.css, main.css,admin.css]
+  has_layout:     on
+  layout:         admin

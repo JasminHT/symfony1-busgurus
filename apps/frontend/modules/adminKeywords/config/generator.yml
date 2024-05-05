@@ -1,0 +1,28 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           HrKeywords
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          hr_keywords
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:    Keywords     
+        display:  [keyword_en, keyword_fr, keyword_list, keyword_list_fr]
+        sort:     keyword_en
+      filter:  
+        class: false
+      form:    ~
+      edit:    
+        title:    Edit Keyword
+        display:  [keyword_en, keyword_fr, keyword_list, keyword_list_fr]
+      new:     
+        title:    New Keyword      
+        display:  [keyword_en, keyword_fr, keyword_list, keyword_list_fr, created_at, updated_at]

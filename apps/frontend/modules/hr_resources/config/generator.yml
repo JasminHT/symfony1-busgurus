@@ -1,0 +1,40 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           HrResources
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          hr_resources
+    with_propel_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:         Resources
+        display:       [id, en, fr, title_en, title_fr, approved, clicks, created_at, updated_at ]
+      filter:
+        class: false
+       # display: [id, title_en, title_fr, hr_resource_categories_relations_list, clicks, created_at]
+      form:    ~
+      edit:
+        display:
+          Resource Language: [en, fr]
+          General Info <br>&nbsp;(duplicate discriptions for both languages):    [title_en, title_fr, pub_type, pub_format, hr_resource_keywords_relations_list, keywords, author, organization_en , organization_fr, country, description_en, description_fr, thumbnail_en, thumbnail_fr, hr_resource_categories_relations_list]
+          If Online:       [url_en, url_fr]
+          If Publication:  [publisher, pub_date, pub_place, series, isbn]
+          Public Submitter Info:  [first_name, last_name, email, phone, date_submitted]
+          Admin Functions: [approved, clicks, notes]
+      new:
+        display:
+          Resource Language: [en, fr]
+          General Info <br>&nbsp;(duplicate discriptions for both languages):    [title_en, title_fr, pub_type, pub_format, hr_resource_keywords_relations_list, keywords, author, organization_en , organization_fr, description_en, description_fr, thumbnail_en, thumbnail_fr, hr_resource_categories_relations_list]
+          If Online:       [url_en, url_fr]
+          If Publication:  [publisher, pub_date, pub_place, series, isbn]
+          Public Submitter Info:  [first_name, last_name, email, phone,date_submitted]
+          Admin Functions: [approved, notes]
+
+
