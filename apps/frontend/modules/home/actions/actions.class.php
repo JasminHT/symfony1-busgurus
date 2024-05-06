@@ -25,10 +25,6 @@ class homeActions extends sfActions {
         //$response->setTitle($this->getContext()->getI18N()->__("BusGurus :: HR Knowledge Centre : Where the best minds in the industry gather"));
     }
 
-    public function executeLibrary(sfWebRequest $request) {
-        $response = $this->getResponse();
-        //$response->setTitle($this->getContext()->getI18N()->__("HR Library"));
 
-    }
 
 }

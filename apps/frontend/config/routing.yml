@@ -168,12 +168,6 @@ resourceClick:
     id: \d+               #Number required
 
 
-# default rules
-hrLibrary:
-  url:   /:sf_culture/resources/main
-  param: { module: home, action: library, sf_culture: en  }
-  requirements:
-    sf_culture: (fr|en)
 
 # default rules
 homepage:
